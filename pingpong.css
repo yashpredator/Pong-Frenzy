@@ -1,19 +1,27 @@
-#box img{
-    /* background-color:rgb(14, 14, 64); */
-    /* background-image:url('https://static.vecteezy.com/system/resources/thumbnails/002/869/957/small/colourful-space-background-free-vector.jpg') */
+/* #box img{
     height:97vh;
     width:206vh;
     position:relative;
+} */
+
+body{
+    margin: 0;
+}
+
+#box{
+    background: url("https://wallpaperaccess.com/full/84353.jpg");
+    height: 100vh;
 }
 
 #ball{
-    height:3vh;
+ height:3vh;
     width:3vh;
     border-radius:5vh;
-    background-color:red;
+    background-color:rgb(224, 41, 41);
+    box-shadow: 2px 2px 2px black;
     position:fixed;
-    left:49%;
-    top:3%;
+    /* left:49%;
+    top:3%; */
 
 }
 #rod1{
@@ -28,16 +36,22 @@
     left:43%;
     text-align:center;
 }
+
+.parent{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
 #scoreofplayer{
-    position:fixed;
-    text-align:center;
-    bottom:50%;
+    position: fixed;
     font-size:80px;
     color:aqua;
-    left:43%;
-    opacity:0.3;
-    
+    opacity:0.3; 
+    top: 50%;
 }
+
+
 
 #rod2{
     height:2vh;
