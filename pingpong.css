@@ -1,0 +1,52 @@
+#box img{
+    /* background-color:rgb(14, 14, 64); */
+    /* background-image:url('https://static.vecteezy.com/system/resources/thumbnails/002/869/957/small/colourful-space-background-free-vector.jpg') */
+    height:97vh;
+    width:206vh;
+    position:relative;
+}
+
+#ball{
+    height:3vh;
+    width:3vh;
+    border-radius:5vh;
+    background-color:red;
+    position:fixed;
+    left:49%;
+    top:3%;
+
+}
+#rod1{
+    height:2vh;
+    width:35vh;
+    background-color:rgb(131, 192, 26);
+    border-radius:2vh;
+    /* margin-left:85vh;
+    margin-top:-2vh; */
+    position:fixed;
+    top:3%;
+    left:43%;
+    text-align:center;
+}
+#scoreofplayer{
+    position:fixed;
+    text-align:center;
+    bottom:50%;
+    font-size:80px;
+    color:aqua;
+    left:43%;
+    opacity:0.3;
+    
+}
+
+#rod2{
+    height:2vh;
+    width:35vh;
+    background-color:rgb(148, 18, 160);
+    border-radius:2vh;
+    left:42%;
+    /* position:absolute; */
+    position:fixed;
+    bottom:3%;
+    text-align:center;
+}
