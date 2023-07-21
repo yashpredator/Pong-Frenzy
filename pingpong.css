@@ -1,16 +1,12 @@
-/* #box img{
-    height:97vh;
-    width:206vh;
-    position:relative;
-} */
-
 body{
     margin: 0;
 }
 
 #box{
     background: url("https://wallpaperaccess.com/full/84353.jpg");
+    background-position: 100%;
     height: 100vh;
+    background-size: cover;
 }
 
 #ball{
@@ -24,17 +20,27 @@ body{
     top:3%; */
 
 }
+
+
 #rod1{
-    height:2vh;
-    width:35vh;
+    height:3vh;
+    width:20rem;
     background-color:rgb(131, 192, 26);
     border-radius:2vh;
     /* margin-left:85vh;
     margin-top:-2vh; */
     position:fixed;
-    top:3%;
+    top:1%;
     left:43%;
     text-align:center;
+    font-weight: 900;
+    font-size: larger;
+}
+
+@media(width<600px){
+    #rod1{
+        width: 10rem;
+    }
 }
 
 .parent{
@@ -47,20 +53,31 @@ body{
     position: fixed;
     font-size:80px;
     color:aqua;
-    opacity:0.3; 
-    top: 50%;
+    opacity:0.5; 
+    text-shadow: 2px 2px black;
+    /* align-items: center; */
+    top: 40%;
 }
 
 
 
 #rod2{
-    height:2vh;
-    width:35vh;
+    height:3vh;
+    width:20rem;
     background-color:rgb(148, 18, 160);
     border-radius:2vh;
     left:42%;
     /* position:absolute; */
     position:fixed;
-    bottom:3%;
+    bottom:1%;
     text-align:center;
+    font-weight: 900;
+    font-size: larger;
+    /* color: white; */
+}
+
+@media(width<600px){
+    #rod2{
+        width: 10rem;
+    }
 }
