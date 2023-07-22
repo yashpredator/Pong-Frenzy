@@ -18,6 +18,10 @@ let gameover=false;
 
 const storeName = "PlayerName";
 const storeScore = "PlayerMaxScore";
+const resetall = function resetLocalStorage() {
+    localStorage.removeItem(storeName);
+    localStorage.removeItem(storeScore);
+}
 
 // Use of A D and Enter key
 window.addEventListener('keypress',function(event){
@@ -100,29 +104,53 @@ function endofgame(rodname,score){
 }
 
 // After the end of game the rods and balls are reset to the original position with the ball being with the losing rod
-function resetgame(rodname){
+// function resetgame(rodname){
+//     rod1.style.left = (window.innerWidth - rod1.offsetWidth) / 2 + 'px';
+//     rod2.style.left = (window.innerWidth - rod2.offsetWidth) / 2 + 'px';
+//     ball.style.left = window.innerWidth/2+'px';
+
+//     if(rodname==="Rod2"){
+//         ball.style.top = (rod1.offsetTop + rod1.offsetHeight+2) + 'px';
+//         ballSpeedY = 4;
+//         score=0;
+//     }
+//     else if (rodname === "Rod1") {
+//         ball.style.top = (rod2.offsetTop - rod2.offsetHeight-8) + 'px';
+//         ballSpeedY = -4;
+//         score=0;
+//     }
+
+//     score = 0;
+//     s.innerText="Score:0";
+    
+    
+
+
+// }
+
+
+function resetgame(rodname) {
     rod1.style.left = (window.innerWidth - rod1.offsetWidth) / 2 + 'px';
     rod2.style.left = (window.innerWidth - rod2.offsetWidth) / 2 + 'px';
-    ball.style.left = window.innerWidth/2+'px';
 
-    if(rodname==="Rod2"){
-        ball.style.top = (rod1.offsetTop + rod1.offsetHeight+2) + 'px';
+    // Set the initial position of the ball above rod2
+    ball.style.left = (rod2.offsetLeft + rod2.offsetWidth / 2 - ball.offsetWidth / 2) + 'px';
+    ball.style.top = (rod2.offsetTop - ball.offsetHeight) + 'px';
+
+    if (rodname === "Rod2") {
         ballSpeedY = 4;
-        score=0;
-    }
-    else if (rodname === "Rod1") {
-        ball.style.top = (rod2.offsetTop - rod2.offsetHeight-8) + 'px';
+        score = 0;
+    } else if (rodname === "Rod1") {
         ballSpeedY = -4;
-        score=0;
+        score = 0;
     }
 
-    score = 0;
-    s.innerText="Score:0";
-    
-    
-
-
+    s.innerText = "Score:0";
 }
+
+window.addEventListener('beforeunload', function () {
+    resetall();
+});
 
 // To display appropriate message when the player plays for the first time
 (function () {
@@ -134,14 +162,19 @@ function resetgame(rodname){
         maxscore = 0;
         rodname = "Rod1";
     } else {
-        alert(rodname + " has maximum score of " + maxscore * 100);
+        if(!rodname){
+            alert("Press enter to begin");
+        }
+        else{
+            alert(rodname + " has maximum score of " + maxscore * 100);
+        }
+        
         // alert("Press Enter to begin");
     }
     score=0;
 
     resetgame(rodname);
 })();
-
 
 
 
